@@ -1,0 +1,33 @@
+﻿@model List<OMDb>
+
+<form asp-method="post" asp-action="MovieNight">
+    <h1>Search By Title</h1>
+    <label for=" titleSearch">Title 1:</label>
+    <input type="text" name="titleSearch" id="titleSearch" value="title" />
+    <br />
+    <label for=" titleSearch">Title 2:</label>
+    <input type="text" name="titleSearch" id="titleSearch" value="title" />
+    <br />
+    <label for=" titleSearch">Title 3:</label>
+    <input type="text" name="titleSearch" id="titleSearch" value="title" />
+    <br />
+    <input type="submit" />
+
+</form>
+
+
+@{
+  
+    if (Model != null)
+    {
+        foreach (OMDb t in Model)
+        {
+            <h2>Title:@t.Title</h2>
+            <p>Genre: @t.Genre</p>
+            <p>Plot: @t.Plot</p>
+        }
+      
+
+    }
+
+}

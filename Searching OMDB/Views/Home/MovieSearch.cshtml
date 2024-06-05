@@ -1,0 +1,24 @@
+﻿@model OMDb
+
+<form asp-method="post" asp-action="MovieSearch">
+    <h1>Search By Title</h1>
+    <label for=" titleSearch">Title</label>
+    <input type="text" name="titleSearch" id="titleSearch" value="title" />
+    <br />
+    <input type="submit"/>
+
+</form>
+  
+
+@{
+    if(Model != null)
+    {
+        <h2>Title:@Model.Title</h2>
+            <p>Genre: @Model.Genre</p>
+        <p>Plot: @Model.Plot</p>
+
+    }
+   
+}
+            
+
